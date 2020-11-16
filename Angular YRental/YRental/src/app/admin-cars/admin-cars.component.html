@@ -1,0 +1,92 @@
+
+
+
+
+<h1 >Welcome to the admin Cars Manage:</h1>
+
+<h2><a [routerLink]="['/admin']" class="btn btn-primary" role="button">back To main Admin</a></h2>
+
+
+<h2 style="text-align: left">Car Type Manage table:</h2>
+
+<br/>
+
+<h5 style="text-align: left">To Add another Car Type <a [routerLink]="['/add-car-type']" class="btn btn-primary" role="button">Add Car Type </a></h5>
+
+<div>
+    <table *ngIf="arrCarsType">
+        <thead>
+            <th>Car Type Id </th>
+            <th>Manufactor Name</th>
+            <th>Model</th>
+            <th>Price Per Day</th>
+            <th>Price for Delay Per Day</th>
+            <th>Production Year</th>
+            <th>Gear</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let i of arrCarsType">
+                <td>{{i.Car_Type_ID}}</td>
+                <td>{{i.Manufactor_Name}}</td>
+                <td>{{i.Model}}</td>
+                <td>{{i.Price_PerDay}}</td>
+                <td>{{i.Price_Delay}}</td>
+                <td>{{i.Production_Year}}</td>
+                <td>{{i.Gear}}</td>
+                <td><a class="btn btn-success"  role="button" (click)="UpdateCarType(i.Car_Type_ID)" >Update</a></td>
+                <td><a class="btn btn-danger"  role="button"(click)="DeleteCarType(i.Car_Type_ID)">Delete</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+
+
+<br/>
+
+
+<h2 style="text-align: left">Car List Manage table:</h2>
+
+<br/>
+
+<h5 style="text-align: left">To Add another Car to the company <a [routerLink]="['/add-car']" class="btn btn-primary" role="button">Add Car</a></h5>
+
+<div>
+    <table *ngIf="arrCarsList">
+        <thead>
+            <th>Car Id</th>
+            <th>Car Type Id</th>
+            <th>Kilometer</th>
+            <th>Picture</th>
+            <th>Undamage</th>
+            <th>Available</th>
+            <th>Car Number</th>
+            <th>Branch ID</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let i of arrCarsList">
+                <td>{{i.Car_ID}}</td>
+                <td>{{i.Car_Type_ID}}</td>
+                <td>{{i.Kilometer}}</td>
+                <td><img class="pic" src="data:image/jpeg;base64,{{i.Picture}}"></td>
+                <td>{{i.Undamaged}}</td>
+                <td>{{i.Available}}</td>
+                <td>{{i.Car_number}}</td>
+                <td>{{i.Branch_ID}}</td>
+                <td><a class="btn btn-success"  role="button" (click)="UpdateCarFromList(i.Car_ID)">Update</a></td>
+                <td><a class="btn btn-danger"  role="button" (click)="DeleteCarFromList(i.Car_ID)">Delete</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+

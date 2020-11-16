@@ -1,0 +1,119 @@
+
+<h1 >Welcome to  Worker admin page:</h1>
+
+<h2><a [routerLink]="['/main-page']" class="btn btn-primary" role="button">back To Home page</a></h2>
+
+
+
+
+
+<br/>
+
+
+<h2 style="text-align: left">Car List Manage table:</h2>
+
+<br/>
+
+<h5 style="text-align: left">To Search Number of Car   </h5>
+ <input [(ngModel)]="searchbar" type="text"><p>Your Search: {{searchbar}}</p>
+
+<br/>
+
+
+
+<h1 >Welcome to the worker Manage tablle: Order still Run</h1>
+
+
+<div>
+    <table *ngIf="arrOrders|orderStatus:0">
+        <thead>
+            <th>Order Id</th>
+            <th>Car Id</th>
+            <th>Start Hire Date</th>
+            <th>Return Estimate Date</th>
+            <th>Return Real Date</th>
+            <th>User Id</th>
+            <th>Orders Status</th>
+            <th>Car Number</th>
+            <th>Number Of Days</th>
+            <th>Price Per Days</th>
+            <th>Estimate Cost</th>
+            <th>Number Of Delay</th>
+            <th>Price Per Delay</th>
+            <th>Total Cost</th>
+            <th>Update-Return Car</th>
+            
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let i of arrOrders|orderStatus:0|workerpipe:searchbar">
+                <td>{{i.Order_ID}}</td>
+                <td>{{i.Car_ID}}</td>
+                <td>{{i.Start_Date|date:'longDate'}}</td>
+                <td>{{i.Return_Estimate_Date|date:'longDate'}}</td>
+                <td>{{i.Return_Real_Date|date:'longDate'}}</td>
+                <td>{{i.User_ID}}</td>
+                <td>{{i.Order_Status}}</td>
+                <td>{{i.Car_Number}}</td>
+                <td>{{i.Number_Of_Days}}</td>
+                <td>{{i.Price_PerDay}}</td>
+                <td>{{i.Estimate_Cost}}</td>
+                <td>{{i.Number_Of_Delay}}</td>
+                <td>{{i.PricePerDelay}}</td>
+                <td>{{i.Total_Cost}}</td>
+                <td><a class="btn btn-success"  role="button" (click)="UpdateOrder(i.Order_ID,i.User_ID,i.Car_ID,i.Start_Date,i.Return_Estimate_Date,i.Number_Of_Days,i.Total_Cost)">Update To Return car</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<br/>
+<br/>
+
+<h1 >Welcome to the worker Manage table:  order finish- car return</h1>
+
+
+<div>
+    <table *ngIf="arrOrders|orderStatus:1">
+        <thead>
+            <th>Order Id</th>
+            <th>Car Id</th>
+            <th>Start Hire Date</th>
+            <th>Return Estimate Date</th>
+            <th>Return Real Date</th>
+            <th>User Id</th>
+            <th>Orders Status</th>
+            <th>Car Number</th>
+            <th>Number Of Days</th>
+            <th>Price Per Days</th>
+            <th>Estimate Cost</th>
+            <th>Number Of Delay</th>
+            <th>Price Per Delay</th>
+            <th>Total Cost</th>
+            <th>Update-Return Car</th>
+            
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let i of arrOrders|orderStatus:1|workerpipe:searchbar">
+                <td>{{i.Order_ID}}</td>
+                <td>{{i.Car_ID}}</td>
+                <td>{{i.Start_Date|date:'longDate'}}</td>
+                <td>{{i.Return_Estimate_Date|date:'longDate'}}</td>
+                <td>{{i.Return_Real_Date|date:'longDate'}}</td>
+                <td>{{i.User_ID}}</td>
+                <td>{{i.Order_Status}}</td>
+                <td>{{i.Car_Number}}</td>
+                <td>{{i.Number_Of_Days}}</td>
+                <td>{{i.Price_PerDay}}</td>
+                <td>{{i.Estimate_Cost}}</td>
+                <td>{{i.Number_Of_Delay}}</td>
+                <td>{{i.PricePerDelay}}</td>
+                <td>{{i.Total_Cost}}</td>
+                <td><a class="btn btn-success"  role="button" (click)="UpdateOrder(i.Order_ID,i.User_ID,i.Car_ID,i.Start_Date,i.Return_Estimate_Date,i.Number_Of_Days,i.Total_Cost)">Update To Return car</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

@@ -1,0 +1,23 @@
+.bg {
+    /* The image used */
+    background-image: url("../../assets/a.jpg");
+    
+  
+    /* Half height */
+    height: 620px;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    
+    background-size: cover;
+  }
+
+ h4{
+
+    color: white;
+  }
+ 
+ h1{
+    color:hsl(0, 11%, 93%);
+
+ }

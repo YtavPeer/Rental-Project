@@ -1,0 +1,135 @@
+
+
+<div class="container">
+
+    <h1>welcome to Update Order page, <a [routerLink]="['/main-page']" class="btn btn-primary" role="button">back To
+            main Page</a></h1>
+    <h3>please fill all Update Order details below:</h3>
+    <form>
+        <hr class="style2">
+        <h5>Car Description:</h5>
+        <h6>Please Update:</h6>
+        <div class="form-row">
+            <div class="form-group col-md-2">
+                <label for="car Car_Type_ID">Car Type And Car Id </label>
+                <select class="form-control"  placeholder="Car Id" (change)="onChange($event.target.value)">
+                    <option>{{stringupdate}}</option>
+                    <option *ngFor="let i of arrCarsList">
+                     {{i.Car_Type_ID}}) The Car Id Is: {{ i.Car_ID }} </option>
+                </select>
+            </div>
+            <div class="form-group col-md-1">
+                <label for="manufactor">Car ID</label>
+                <input class="form-control" type="text" #T1  placeholder="{{CarIdFromChosenCarId ? CarIdFromChosenCarId : arrCarsList[0].Car_ID}}" readonly>
+            </div>
+
+            <div class="form-group col-md-2">
+                <label for="manufactor">Car Number</label>
+                <input class="form-control" #T3 type="text"  placeholder="{{CarNumberFromId ? CarNumberFromId : arrCarsList[0].Car_number}}" readonly>
+            </div>
+
+            <div class="form-group col-md-2">
+                <label for="manufactor">Manufactor Name</label>
+                <input class="form-control" type="text"  placeholder="{{manufactor ? manufactor : arrCarsType[0].Manufactor_Name}}" readonly>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="model">Model</label>
+                <input class="form-control" type="text" placeholder="{{model ? model :arrCarsType[0].Model}}" readonly>
+            </div>
+            <div class="form-group col-md-1">
+                <label for="productionYear">Year</label>
+                <input class="form-control" type="text" placeholder="{{productionYear ? productionYear :arrCarsType[0].Production_Year}}" readonly>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="gear">Gear</label>
+                <input class="form-control" type="text" placeholder="{{gear ? gear :arrCarsType[0].Gear}}" readonly>
+            </div>
+        </div>
+        <hr class="style2">
+        <h5>User Description:</h5>
+        <h6>Please Update:</h6>
+        <div class="form-row">
+            <div class="form-group col-md-1">
+                <label for="car Car_Type_ID">User Id</label>
+                <select class="form-control" #T2 placeholder="UserId" (change)="onChangeUser($event.target.value)">
+                    <option>{{UserId}}</option>
+                    <option *ngFor="let i of arrUsers">
+                        {{i.User_ID}}</option>
+                </select>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="inputPassword4">User Name Details</label>
+                <input class="form-control" type="text" placeholder="{{UserName ? UserName : arrUsers[0].User_Name}}" readonly>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="inputPassword4">Password Details</label>
+                <input class="form-control" type="text" placeholder="{{password ? password : arrUsers[0].Password}}" readonly>
+            </div>
+            <div class="form-group col-md-5">
+                <label for="inputPassword4">User Picture</label>
+                <div>
+                     <img src="data:image/jpeg;base64,{{picture ? picture : arrUsers[2].Picture}}">
+                </div>  
+            </div>
+        </div>
+        <hr class="style2">
+        <h5>Dates and Cost Description:</h5>
+        <h6>Please Update:</h6>
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label for="daterangepicker">Please Choose Dates Range To Hire</label>
+                <ejs-daterangepicker id='daterangepicker' placeholder='Select a range'  [(startDate)]='start'  [(endDate)]='end' (change)="onChangeHireDate()"></ejs-daterangepicker>
+            </div>
+            <div class="form-group col-md-1">
+    
+            </div>
+            <div class="form-group col-md-2">
+                <label for="inputPassword4">Total Number of Days</label>
+                <input class="form-control" #T4 type="text" placeholder="{{NumberOfDays ? NumberOfDays : 1}}" readonly>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="inputPassword4">Price Per Day</label>
+                <input class="form-control" #T5 type="text" placeholder="{{PricePerDay ? PricePerDay : arrCarsType[0].Price_PerDay}}" readonly>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="inputPassword4">Estimate Cost</label>
+                <input class="form-control"  #T6 type="text" placeholder="{{totalCost ? totalCost : PricePerDay}}" readonly>
+            </div>
+        </div>
+<hr class="style2">
+        <h5>More Info:</h5>
+        <div class="form-row">
+            <div class="form-group col-md-2">
+                <label for="inputPassword10">Actual Return Date</label>
+                <input class="form-control" (change)="onChangeActual($event.target.value)"   type="date"  >
+            </div>
+            <div class="form-group col-md-2">
+                <label for="inputPassword4">Number Of Delay</label>
+                <input class="form-control" (change)="onChangeDelay($event.target.value)"  #T7 type="text" placeholder="{{NumberOfDelay ? NumberOfDelay : 0}}">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="inputPassword4">Price Per Delay Day</label>
+                <input class="form-control" #T8 type="text" placeholder="{{priceDelay ? priceDelay : arrCarsType[0].Price_Delay}}" readonly>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="inputPassword7">Total Delay Cost</label>
+                <input class="form-control"  type="text" placeholder="{{priceDelay ? priceDelay*(NumberOfDelay?NumberOfDelay:0 ) : 0}}" readonly>
+            </div>
+        
+        </div>
+        <hr class="style2">
+        <div class="form-row">
+            <div class="form-group col-md-2">
+                <h6><u>Total Reservation Cost</u></h6>
+                <input class="form-control" #T9 type="text" placeholder="{{totalCost ? totalCost : PricePerDay}}" readonly>
+            </div>
+        </div>
+
+        <button type="submit" (click)="UpdateOrder(T2.value)" class="btn btn-primary">Update Order Only</button>
+        <br/>
+        <button type="submit" (click)="UpdateOrderAndReturn(T2.value)" class="btn btn-primary">Update Order And Return Car</button>
+    </form>
+</div>
+
+
+

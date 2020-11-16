@@ -1,0 +1,44 @@
+a{
+    color: aliceblue;
+    cursor: pointer;
+   
+   
+}
+
+h6{
+    color: hsl(60, 4%, 5%);
+
+}
+
+ ul:hover {
+        cursor:pointer;
+       }
+
+       nav-link{
+        cursor:pointer;
+
+       }
+
+       .float{
+
+display: flex;
+float: left;
+
+
+       }
+
+       .posSign{
+
+padding-top: 20px;
+padding-right: 20px;
+padding-left: 40px;
+
+
+       }
+
+
+       .form-control-sm-4{
+width: 140px;
+
+
+       }

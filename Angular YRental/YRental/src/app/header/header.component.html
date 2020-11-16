@@ -1,0 +1,64 @@
+
+<!-- Default form login -->
+<div class="posSign">
+    <div class="float">
+        
+        <div class="row">
+            <form class="text-center border border-light p-3 ">
+                <p class="h6 sm-6">Sign in  </p>
+                <!-- Email -->
+                <div class="row">
+                     <input type="text" #sss1 id="defaultLoginFormPassword" class="form-control-sm-4"
+                    placeholder="User Name">
+                </div>
+                <div class="row">
+                      <!-- Password -->
+                    <input type="text" #sss2 id="defaultLoginFormPassword" class="form-control-sm-4"
+                    placeholder="Password">
+               </div>
+                <!-- Sign in button -->
+                <!-- sss1.value,sss2.value -->
+                <button (click)="SignUp(sss1.value,sss2.value)" class="btn btn-primary btn-sm btn-block my-7" type="submit">Sign in</button>
+                <!-- Register -->
+            </form>
+        </div>
+    </div>
+</div>
+
+
+    <nav class="navbar navbar-expand-lg navbar p-1 mb-1">
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+
+                <ul class="nav-item dropdown">
+                    <a  [routerLink]="['/admin']" class="nav-link"><b>Hello {{usernameHeaders}},</b><br /></a>  
+                </ul>
+
+                <ul class="nav-item dropdown">
+                    <a [routerLink]="['/contact']" class="nav-link">Contact US</a>
+                </ul>
+                <ul class="nav-item dropdown">
+                    <a (click)="userType(0)" class="nav-link">Register</a>
+                </ul>
+
+                <ul [ngSwitch]="UserTypeHeaders"   class="nav-item dropdown">
+                    <a  *ngSwitchCase="2" [routerLink]="['/admin']" class="nav-link">admin</a>
+                    <a *ngSwitchCase="1" [routerLink]="['/worker-page']" class="nav-link">Worker Page</a>
+                    <a *ngSwitchCase="0" [routerLink]="['/manage-booking']" class="nav-link">Manage Booking</a>
+                </ul>
+
+                
+                <!-- <ul   class="nav-item dropdown">
+                    <a   [routerLink]="['/admin']" class="nav-link">admin</a>
+            
+                </ul> -->
+
+                
+            </ul>
+        </div>
+    </nav>
+
+
+
+

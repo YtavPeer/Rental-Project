@@ -1,0 +1,50 @@
+.bg {
+    /* The image used */
+    background-image: url("../../assets/a.jpg");
+    
+  
+    /* Half height */
+    height: 620px;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    
+    background-size: cover;
+  }
+
+  h3{
+
+color: azure;
+
+
+  }
+
+  h5{
+color: rgb(254, 187, 0);
+
+  }
+
+ .bgword{
+padding: 15px;
+    background-color:rgb(83,63,56);
+    opacity: 0.9;
+  }
+
+  .card{
+
+    background-color: #e9e6e6;
+  }
+
+  .card-title{
+
+    color: #242524;
+  }
+
+  .thumbnail{
+    background-color: #dee6e1e1;
+}
+
+.pic{
+  width:100%;
+  max-height: 210px;
+}

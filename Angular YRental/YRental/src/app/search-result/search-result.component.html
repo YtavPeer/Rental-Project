@@ -1,0 +1,145 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-4">
+            <h1>{{UserName}} Search Result, <a [routerLink]="['/main-page']" class="btn btn-primary" role="button">back
+                    To main Page</a> </h1>
+            <h4>Free Search </h4>
+            <input [(ngModel)]="searchbar" type="text"><p>Your Search: {{searchbar}}</p> 
+        </div>
+
+        <div class="form-group col-md-2">
+            <label for="inputPassword4">User Name Details</label>
+            <input class="form-control" type="text" placeholder="{{UserName ? UserName : arrUsers[0].User_Name}}"
+                readonly>
+        </div>
+        <div class="form-group col-md-1">
+            <label for="car Car_Type_ID">User Id</label>
+            <input class="form-control" type="text" placeholder="{{ChoosenUser}}" readonly>
+        </div>
+        <div class="form-group col-md-2">
+            <label for="inputPassword4">Password Details</label>
+            <input class="form-control" type="text" placeholder="{{password ? password : arrUsers[0].Password}}"
+                readonly>
+        </div>
+        <div class="form-group col-md-3">
+            <label for="inputPassword4">User Picture</label>
+            <div>
+                <img src="data:image/jpeg;base64,{{picture ? picture : arrUsers[2].Picture}}">
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <hr class="style2">
+    <h5>Date Choosen:</h5>
+    <div class="row">
+        <div class="col-md-5">
+            <p>Your Choosen Date IS: {{start|date:'longDate'}} Till {{end|date:'longDate'}}</p>
+        </div>
+        <div class="col-md-5">
+            <h4>To Change Date:</h4>
+            <ejs-daterangepicker id='daterangepicker' placeholder='Select a range' [(startDate)]='start'
+                [(endDate)]='end' (change)="onChangeHireDate()"></ejs-daterangepicker>
+        </div>
+
+        <div class="form-group col-md-2">
+            <label for="inputPassword4">Total Number of Days</label>
+            <input class="form-control" #T4 type="text" placeholder="{{NumberOfDays ? NumberOfDays : 1}}" readonly>
+        </div>
+
+    </div>
+
+    <hr class="style2">
+
+
+    <div>
+        <table *ngIf="searchAvailable">
+            <thead>
+               
+                
+                <th> <label for="exampleFormControlSelect1">select Manufactor</label>
+                    <select (change)="ManufactorSelected($event.target.value)" #manufactorchoose class="form-control" id="exampleFormControlSelect1">
+                        <option></option>
+                        <option>toyota</option>
+                        <option>kia</option>
+                        <option>mazda</option>
+                        <option>nissan</option>
+                        <option>hyundai</option>
+                        <!-- <option *ngFor="let i of arrCarsType">{{i.Manufactor_Name}} </option> -->
+                    </select></th>
+                    <th> <label for="exampleFormControlSelect1">select <br/> Model</label>
+                        <select (change)="ModelSelected($event.target.value)" #model class="form-control" id="exampleFormControlSelect1">
+                            <option></option>
+                            <option>rav4</option>
+                            <option>corolla</option>
+                            <option>picanto</option>
+                            <option>sportage</option>
+                            <option>mpv</option>
+                            <option>mx5</option>
+                            <option>leaf</option>
+                            <option>ioniq</option>
+                            <!-- <option *ngFor="let i of arrCarsType">{{i.Model}} </option> -->
+                        </select></th>
+                        <th> <label for="exampleFormControlSelect1">select <br/> Gear</label>
+                            <select #gear (change)="GearSelected($event.target.value)" class="form-control" id="exampleFormControlSelect1">
+                                <option></option>
+                                <option>Manual</option>
+                                <option>automatic</option>  
+                            </select></th>
+                            <th> <label for="exampleFormControlSelect1">select <br/> Year</label>
+                                <select (change)="YearSelected($event.target.value)" #year class="form-control" id="exampleFormControlSelect1">
+                                    <option></option>
+                                    <option>2017</option>
+                                    <option>2018</option>
+                                    <option>2019</option>
+                                    <option>2020</option>
+                                    <!-- <option *ngFor="let i of arrCarsType">{{i.Production_Year}} </option> -->
+                                </select></th>
+                 <th>Picture</th>
+                <th>Kilometer</th>
+                <th>Car Number</th>
+                <th>Price Per Day</th>
+                <th>Total Days</th>
+                <th>Total Cost</th>
+                <th>Get Car</th>
+            
+            </thead>
+           
+            <tbody>
+                <tr *ngFor="let item of searchAvailable|filterCar:manufactorSelected:modelSelected:gearSelected:yearSelected:searchbar; index as i">
+                    <!-- filterCar:manufactorSelected:modelSelected:gearSelected:yearSelected:searchbar -->
+                   
+                    <!-- test manufactor -->
+                    <td>{{item.Manufactor_Name}}</td>
+
+
+                    <!-- car manufactor -->
+                    <td>{{item.Model}}</td>
+
+                    <!-- car model -->
+                    <td>{{item.Gear}}</td>
+
+                    <!-- car Gear -->
+                    <td>{{item.Production_Year}}</td>
+
+                    <td ><img class="pic" src="data:image/jpeg;base64,{{item.Picture}}"></td>
+                    <td>{{item.Kilometer}}</td>
+                    <td>{{item.Car_number}}</td>
+
+                    <!-- car price per year -->
+                    <td>{{item.Price_PerDay}}</td>
+
+                    <td> {{NumberOfDays}}</td>
+
+                    <td class="bold">{{item.Price_PerDay*NumberOfDays}}</td>
+
+
+                    <td><a (click)="GetCar(item,i)" class="btn btn-success" role="button">Get Car</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>

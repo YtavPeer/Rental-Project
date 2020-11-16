@@ -1,0 +1,53 @@
+
+<div class="bg">
+
+
+<br/>
+<div class="container">
+    <div class="row">
+<h1>Welcome to the Admin Main Page, </h1>
+
+</div>
+<h2><a [routerLink]="['/main-page']" class="btn btn-primary" role="button">back To main</a></h2>
+</div>
+<br/>
+<br/>
+<div class="container">
+    <div class="row">
+        <div class="col-sm 4">
+            <div class="card" style="width: 18rem; height: 28rem;">
+                <img class="card-img-top" src="../../assets/cars/ioniq1.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Admin Car List</h5>
+                    <p class="card-text">get inside to add cars to the stack and see all the cars in the company
+                        </p>
+                    <a [routerLink]="['/admin-cars']" class="btn btn-primary">Cars admin</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm 4">
+            <div class="card" style="width: 18rem;height: 28rem;">
+                <img class="card-img-top" src="../../assets/ORDERS.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Admin Orders List</h5>
+                    <p class="card-text">get inside to manage all orders in the company
+                        </p>
+                    <a [routerLink]="['/admin-orders']" class="btn btn-primary">Orders Admin</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm 4">
+            <div class="card" style="width: 18rem;height: 28rem;">
+                <img class="card-img-top" src="../../assets/USERS.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Admin User List</h5>
+                    <p class="card-text">get inside to manage users, workers and manager in the company
+                        </p>
+                    <a [routerLink]="['/admin-users']" class="btn btn-primary">User Admin</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>

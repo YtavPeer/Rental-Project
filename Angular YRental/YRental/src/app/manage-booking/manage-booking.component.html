@@ -1,0 +1,61 @@
+
+<h1 >Hello {{usernameHeaders}}, <br/> Welcome to Orders Manage Page:</h1>
+
+<div class="container">
+
+    <label for="inputPassword4">Your User ID Is {{UserIdHeaders}}</label>
+    <br/>
+        <img src="data:image/jpeg;base64,{{UserPictue}}">
+   
+         
+    
+
+
+<h2><a [routerLink]="['/main-page']" class="btn btn-primary" role="button">back To main Page</a></h2>
+
+
+
+<div>
+    <table *ngIf="arrOrders|userManage:UserIdHeaders">
+        <thead>
+            <th>Order Id</th>
+            <th>Car Id</th>
+            <th>Start Hire Date</th>
+            <th>Return Estimate Date</th>
+            <th>User Id</th>
+            <th>Car Number</th>
+            <th>Number Of Days</th>
+            <th>Price Per Days</th>
+            <th>Estimate Cost</th>
+            <th>Number Of Delay</th>
+            <th>Price Per Delay</th>
+            <th>Total Cost</th>
+         
+            <th>Delete</th>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let i of arrOrders|userManage:UserIdHeaders">
+                <td>{{i.Order_ID}}</td>
+                <td>{{i.Car_ID}}</td>
+                <td>{{i.Start_Date|date:'longDate'}}</td>
+                <td>{{i.Return_Estimate_Date|date:'longDate'}}</td>
+                <td>{{i.User_ID}}</td>
+                <td>{{i.Car_Number}}</td>
+                <td>{{i.Number_Of_Days}}</td>
+                <td>{{i.Price_PerDay}}</td>
+                <td>{{i.Estimate_Cost}}</td>
+                <td>{{i.Number_Of_Delay}}</td>
+                <td>{{i.PricePerDelay}}</td>
+                <td>{{i.Total_Cost}}</td>
+               
+                <td><a class="btn btn-danger"  role="button" (click)="DeleteOrder(i.Order_ID)">Delete</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<br/>
+<br/>
+</div>

@@ -1,0 +1,39 @@
+
+
+tr:nth-child(even){
+    background-color:#fff;
+}
+tr:nth-child(odd){
+    background-color:#ccc;
+}
+
+
+table{
+    border: 5x ;
+    padding: 4px;
+    margin: 7px;
+    
+}
+th{
+    text-align: center;
+    background-color: rgb(254, 187, 0);
+    padding: 10px;
+}
+
+hr.style2 {
+	border-top: 3px double #8c8b8b;
+}
+
+td{
+    text-align: center;
+}
+.bold{
+
+    font-weight: 600;
+}
+
+
+.pic{
+    max-height:150px;
+    max-width:150px;
+}

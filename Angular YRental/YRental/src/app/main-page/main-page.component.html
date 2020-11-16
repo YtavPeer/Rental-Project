@@ -1,0 +1,91 @@
+<div class="bg">
+
+
+    <app-header> </app-header>
+
+
+    <br />
+
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="bgword">
+
+                <h3>Welcome to YReantalCars.com Your Best Place for Car Hire!</h3>
+                <h5>Easy Search, simple book and go to travel - best place to save money </h5>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <app-search></app-search>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+<br />
+<br />
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm 4">
+            <div class="thumbnail">
+                <img class="pic" src="data:image/jpeg;base64,{{searchAvailable[search1? search1 :1].Picture}}">
+                <div class="caption">
+                    <h3 class="card-title">{{searchAvailable[search1? search1 :1].Manufactor_Name}}  {{searchAvailable[search1? search1 :1].Model}}</h3>
+                    <h6>{{searchAvailable[search1? search1 :1].Gear}}  {{searchAvailable[search1? search1 :1].Production_Year}}</h6>
+                    <p>Only for {{searchAvailable[search1? search1 :1].Price_PerDay}} nis per day</p>
+                    <p><a (click)="getinfo(1)" class="btn btn-primary" role="button">Get Car
+                       </a></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm 4">
+            <div class="thumbnail">
+                <img class="pic" src="data:image/jpeg;base64,{{searchAvailable[search2? search2 :2].Picture}}">
+                <div class="caption">
+                    <h3 class="card-title">{{searchAvailable[search2? search2 :2].Manufactor_Name}} {{searchAvailable[search2? search2 :2].Model}} </h3>
+                    <h6>{{searchAvailable[search2? search2 :2].Gear}}  {{searchAvailable[search2? search2 :2].Production_Year}}</h6>
+                    <p>Only for {{searchAvailable[search2? search2 :2].Price_PerDay}} nis per day</p>
+                    <p><a (click)="getinfo(2)" class="btn btn-primary" role="button">Get Car
+                        </a></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm 4">
+            <div class="thumbnail">
+                <img class="pic" src="data:image/jpeg;base64,{{searchAvailable[search3? search3 :5].Picture}}">
+                <div class="caption">
+                    <h3 class="card-title">{{searchAvailable[search3? search3 :5].Manufactor_Name}}  {{searchAvailable[search3? search3 :5].Model}}</h3>
+                    <h6>{{searchAvailable[search3? search3 :5].Gear}}  {{searchAvailable[search3? search3 :5].Production_Year}}</h6>
+                    <p>Only for {{searchAvailable[search3? search3 :5].Price_PerDay}} nis per day</p>
+                    <p><a (click)="getinfo(5)" class="btn btn-primary" role="button">Get Car
+                         </a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,61 @@
+
+<div class="container">
+
+    <h1>welcome to the Update car page, <a [routerLink]="['/admin-cars']" class="btn btn-primary" role="button">back To
+            Admin Car Page</a></h1>
+    <h3>please fill all new car details below:</h3>
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="car Car_Type_ID">Car new Type Id</label>
+                <select class="form-control" #T1 placeholder="Car new Id">
+                    <option *ngFor="let i of arrCarsType">
+                        {{i.Car_Type_ID}}){{i.Manufactor_Name}}{{i.Model}}{{i.Production_Year}}{{i.Gear}}</option>
+                </select>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputPassword4">new Kilometer</label>
+                <input type="text" class="form-control" #T2 placeholder="new Kilometer">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="Undamage select">Is Car Damage</label>
+                <select class="form-control" id="exampleFormControlSelect1" #T4 placeholder="false">
+                    <option>Undamage</option>
+                    <option>Damage</option>
+                </select>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="Undamage select">Is Car Available</label>
+                <select class="form-control" id="exampleFormControlSelect1" #T5 placeholder="Available">
+                    <option>Available</option>
+                    <option>UnAvailable</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">please fill new Car Number</label>
+                <input type="text" class="form-control" placeholder="Car Number" #T6>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="Undamage select">Please choose new Car position Branch </label>
+                <select class="form-control" id="inputPassword4" placeholder="Car new Branch" #T7>
+                    <option>1</option>
+                    <option>2</option>
+                </select>
+            </div>
+        </div>
+        <h4>Car Picture Upload</h4>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <input type="file" (change)="UploadImage($event)">
+            </div>
+        </div>
+        <button (click)="UpdateCar(T1.value,T2.value,T4.value,T5.value,T6.value,T7.value)" type="submit" class="btn btn-primary">Update Car</button>
+    </form>
+</div>
+
+
+

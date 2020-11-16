@@ -1,0 +1,111 @@
+
+<h1 >Welcome to the admin Orders Manage:</h1>
+
+<h2><a [routerLink]="['/admin']" class="btn btn-primary" role="button">back To main Admin</a></h2>
+
+<h2 style="text-align: left">Orders Manage table status 0: (Available to booking now)</h2>
+
+<h5 style="text-align: left">To Add another Order <a [routerLink]="['/add-order']" class="btn btn-primary" role="button">Add Order</a></h5>
+
+<div>
+    <table *ngIf="arrOrders|orderStatus:0">
+        <thead>
+            <th>Order Id</th>
+            <th>Car Id</th>
+            <th>Start Hire Date</th>
+            <th>Return Estimate Date</th>
+            <th>Return Real Date</th>
+            <th>User Id</th>
+            <th>Orders Status</th>
+            <th>Car Number</th>
+            <th>Number Of Days</th>
+            <th>Price Per Days</th>
+            <th>Estimate Cost</th>
+            <th>Number Of Delay</th>
+            <th>Price Per Delay</th>
+            <th>Total Cost</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let i of arrOrders|orderStatus:0">
+                <td>{{i.Order_ID}}</td>
+                <td>{{i.Car_ID}}</td>
+                <td>{{i.Start_Date|date:'longDate'}}</td>
+                <td>{{i.Return_Estimate_Date|date:'longDate'}}</td>
+                <td>{{i.Return_Real_Date|date:'longDate'}}</td>
+                <td>{{i.User_ID}}</td>
+                <td>{{i.Order_Status}}</td>
+                <td>{{i.Car_Number}}</td>
+                <td>{{i.Number_Of_Days}}</td>
+                <td>{{i.Price_PerDay}}</td>
+                <td>{{i.Estimate_Cost}}</td>
+                <td>{{i.Number_Of_Delay}}</td>
+                <td>{{i.PricePerDelay}}</td>
+                <td>{{i.Total_Cost}}</td>
+                <td><a class="btn btn-success"  role="button" (click)="UpdateOrder(i.Order_ID)">Update</a></td>
+                <td><a class="btn btn-danger"  role="button" (click)="DeleteOrder(i.Order_ID)">Delete</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<br/>
+<br/>
+
+<h2 style="text-align: left">Orders Manage table status 1:(Not Available to booking now)</h2>
+
+<br/>
+
+<h5 style="text-align: left">To Add another Order <a [routerLink]="['/add-order']" class="btn btn-primary" role="button">Add Order</a></h5>
+
+<div>
+    <table *ngIf="arrOrders">
+        <thead>
+            <th>Order Id</th>
+            <th>Car Id</th>
+            <th>Start Date</th>
+            <th>Return Estimate Date</th>
+            <th>Return Real Date</th>
+            <th>User Id</th>
+            <th>Orders Status</th>
+            <th>Car Number</th>
+            <th>Number Of Days</th>
+            <th>Price Per Days</th>
+            <th>Estimate Cost</th>
+            <th>Number Of Dealay</th>
+            <th>Price Per Delay</th>
+            <th>Total Cost</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let i of arrOrders|orderStatus:1">
+                <td>{{i.Order_ID}}</td>
+                <td>{{i.Car_ID}}</td>
+                <td>{{i.Start_Date|date:'longDate'}}</td>
+                <td>{{i.Return_Estimate_Date|date:'longDate'}}</td>
+                <td>{{i.Return_Real_Date|date:'longDate'}}</td>
+                <td>{{i.User_ID}}</td>
+                <td>{{i.Order_Status}}</td>
+                <td>{{i.Car_Number}}</td>
+                <td>{{i.Number_Of_Days}}</td>
+                <td>{{i.Price_PerDay}}</td>
+                <td>{{i.Estimate_Cost}}</td>
+                <td>{{i.Number_Of_Delay}}</td>
+                <td>{{i.PricePerDelay}}</td>
+                <td>{{i.Total_Cost}}</td>
+                <td><a class="btn btn-success"  role="button" (click)="UpdateOrder(i.Order_ID)">Update</a></td>
+                <td><a class="btn btn-danger"  role="button" (click)="DeleteOrder(i.Order_ID)">Delete</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+
+
+

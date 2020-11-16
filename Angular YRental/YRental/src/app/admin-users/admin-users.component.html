@@ -1,0 +1,151 @@
+
+
+
+
+<h1 >Welcome to the admin users table:</h1>
+
+<h2><a [routerLink]="['/admin']" class="btn btn-primary" role="button">back To main Admin</a></h2>
+
+
+<h2 style="text-align: left">Regular Client Users table:</h2>
+
+<br/>
+
+<h5 style="text-align: left">To Add another Regular Client Users <a (click)="userType(0)" class="btn btn-primary" role="button">Add client</a></h5>
+
+<div>
+    <table *ngIf="arrUsers|userType:0">
+        <thead>
+            <th> User Id </th>
+            <th> User Type </th>
+            <th>First Name </th>
+            <th>Last Name</th>
+            <th>Gender </th>
+            <th>BirthDay</th>
+            <th>Email</th>
+            <th>User Name</th>
+            <th>Password</th>
+            <th>Picture</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let i of arrUsers|userType:0">
+                <td>{{i.User_ID}}</td>
+                <td>{{i.User_Type}}</td>
+                <td>{{i.First_Name}}</td>
+                <td>{{i.Last_Name}}</td>
+                <td>{{i.Gender}}</td>
+                <td>{{i.BirthDay}}</td>
+                <td>{{i.Email}}</td>
+                <td>{{i.User_Name}}</td>
+                <td>{{i.Password}}</td>
+                <td><img src="data:image/jpeg;base64,{{i.Picture}}"></td>
+                
+                <td><a class="btn btn-success"  role="button" (click)="UpdateUser(i.User_ID,i.User_Type)">Update</a></td>
+                <td><a class="btn btn-danger"  role="button" (click)="DeleteUser(i.User_ID)" >Delete</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+
+
+<br/>
+
+
+
+
+<h2 style="text-align: left">Workers of Company table:</h2>
+
+<br/>
+
+<h5 style="text-align: left">To Add another worker to the company <a (click)="userType(1)" class="btn btn-primary" role="button">Add worker</a></h5>
+
+<div>
+    <table *ngIf="arrUsers">
+        <thead>
+            <th> User Id </th>
+            <th> User Type </th>
+            <th>First Name </th>
+            <th>Last Name</th>
+            <th>Gender </th>
+            <th>BirthDay</th>
+            <th>Email</th>
+            <th>User Name</th>
+            <th>Password</th>
+            <th>Picture</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let i of arrUsers|userType:1">
+                <td>{{i.User_ID}}</td>
+                <td>{{i.User_Type}}</td>
+                <td>{{i.First_Name}}</td>
+                <td>{{i.Last_Name}}</td>
+                <td>{{i.Gender}}</td>
+                <td>{{i.BirthDay}}</td>
+                <td>{{i.Email}}</td>
+                <td>{{i.User_Name}}</td>
+                <td>{{i.Password}}</td>
+                <td><img src="data:image/jpeg;base64,{{i.Picture}}"></td>
+
+                <td><a class="btn btn-success"  role="button" (click)="UpdateUser(i.User_ID,i.User_Type)" >Update</a></td>
+                <td><a class="btn btn-danger"  role="button" (click)="DeleteUser(i.User_ID)">Delete</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+
+
+<h2 style="text-align: left">Managers of company table:</h2>
+
+<br/>
+
+<h5 style="text-align: left">To Add another manager <a (click)="userType(2)"  class="btn btn-primary" role="button">Add manager</a></h5>
+
+<div>
+    <table *ngIf="arrUsers">
+        <thead>
+            <th> User Id </th>
+            <th> User Type </th>
+            <th>First Name </th>
+            <th>Last Name</th>
+            <th>Gender </th>
+            <th>BirthDay</th>
+            <th>Email</th>
+            <th>User Name</th>
+            <th>Password</th>
+            <th>Picture</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let i of arrUsers|userType:2">
+                <td>{{i.User_ID}}</td>
+                <td>{{i.User_Type}}</td>
+                <td>{{i.First_Name}}</td>
+                <td>{{i.Last_Name}}</td>
+                <td>{{i.Gender}}</td>
+                <td>{{i.BirthDay}}</td>
+                <td>{{i.Email}}</td>
+                <td>{{i.User_Name}}</td>
+                <td>{{i.Password}}</td>
+                <td><img src="data:image/jpeg;base64,{{i.Picture}}"></td>
+
+                <td><a class="btn btn-success" href="#"  role="button" (click)="UpdateUser(i.User_ID,i.User_Type)">Update</a></td>
+                <td><a class="btn btn-danger"  role="button" (click)="DeleteUser(i.User_ID)" >Delete</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+

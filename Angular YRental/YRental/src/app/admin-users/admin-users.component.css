@@ -1,0 +1,24 @@
+
+
+tr:nth-child(even){
+    background-color:#fff;
+}
+tr:nth-child(odd){
+    background-color:#ccc;
+}
+
+*{
+    text-align: center;
+}
+
+table{
+    border: 5x ;
+    padding: 4px;
+    margin: 7px;
+    
+}
+th{
+    text-align: center;
+    background-color: #2ba4c2;
+    padding: 10px;
+}

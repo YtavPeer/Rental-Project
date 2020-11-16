@@ -1,0 +1,56 @@
+
+<div class="container">
+
+    <h1>welcome to  Update Car Type Page, <a [routerLink]="['/admin']" class="btn btn-primary" role="button">back To
+            admin</a></h1>
+    <h3>please fill all new details below:</h3>
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">new Manufactor Car Company</label>
+                <input type="text" class="form-control" #T1 placeholder="new Manufactor">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputPassword4">new Car Model</label>
+                <input type="text" class="form-control" #T2 placeholder="new Model">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">please fill new Price per 1 day rent</label>
+                <input type="text" class="form-control" #T4 placeholder="new Price per 1 day rent">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputPassword4">please fill new Price per 1 day Delay</label>
+                <input type="text" class="form-control" #T5 placeholder="new Price per 1 day Delay">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">please fill new Production Year</label>
+                <input type="text" class="form-control" placeholder="new Production Year" #T6>
+            </div>
+          <div class="form-group col-md-6">
+                <div class="form-group">
+                    <div class="col-sm-6">
+                          <label class="row"> new Gear:</label>
+                        <label  class="radio-inline">
+                            <input name="gender"   value="Manual" type="radio" [(ngModel)]="GearChoice" />Manual
+                        </label>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="radio-inline">
+                            <input name="gender"   value="automatic" type="radio" [(ngModel)]="GearChoice" />automatic
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <button (click)="UpdateCarType(T1.value,T2.value, T4.value,T5.value,T6.value)"  type="submit" class="btn btn-primary">Update Car Type</button>
+    </form>
+
+</div>
+
+

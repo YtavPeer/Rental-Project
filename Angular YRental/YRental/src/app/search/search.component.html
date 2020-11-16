@@ -1,0 +1,61 @@
+
+
+
+<br/>
+<div class="container">
+    
+    <h3>Let's find your best deal</h3> 
+    
+    <form>
+        <div class="form-row">
+              
+    <div class="form-group col-md-6">
+      <label for="daterangepicker">Please Choose Dates</label>
+      <ejs-daterangepicker id='daterangepicker' placeholder='Select a range'  [(startDate)]='start'  [(endDate)]='end' (change)="onChangeHireDate()"></ejs-daterangepicker>
+  </div>
+
+  <div class="form-group col-md-6">
+      <label for="inputPassword4">Total Number of Days</label>
+      <input class="form-control" #T4 type="text" placeholder="{{NumberOfDays ? NumberOfDays : 1}}" readonly>
+  </div>
+          
+        </div>
+        <div class="form-row">
+          
+            <div class="form-group col-md-6">
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">select Gear</label>
+                <select #gear class="form-control" id="exampleFormControlSelect1">
+                  <option></option>
+                  <option>Manual</option>
+                  <option>automatic</option>      
+                </select>
+              </div>  
+            </div>
+
+            <div class="form-group col-md-6">
+
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">select Manufactor</label>
+                    <select #manuf class="form-control" id="exampleFormControlSelect1">
+                      <option></option>
+                      <option>toyota</option>
+                      <option>kia</option>
+                      <option>mazda</option>
+                      <option>nissan</option>
+                      <option>hyundai</option>
+                      <!-- <option  *ngFor="let i of arrCarsType">{{i.Manufactor_Name}} </option> -->
+                         
+                    </select>
+                  </div>         
+            </div>
+          </div>
+    
+        
+   
+        <button (click)="SearchCar(manuf.value,gear.value)"  type="submit" class="btn btn-primary">Search Car</button>   
+      </form>
+      <br/>
+    </div>
+    <br/>
+    
